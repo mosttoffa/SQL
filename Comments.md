@@ -6,12 +6,12 @@
 
 <br> 
 	🔷 Single-line syntax: <br> 
-		``` SQL description ``` <br>  
+		``` // SQL description  ```
 	🔷 Multi-line syntax: <br>  
-	    /* SQL description <br> 
-       SQL description <br> 
-       SQL description <br> 
-       SQL description */ <br> 
+	  ```  /* SQL description
+       SQL description 
+       SQL description 
+       SQL description */ ```
 
 		/*  <br> 
 		* List all customers from Sweden  <br> 
