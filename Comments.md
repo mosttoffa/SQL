@@ -15,7 +15,8 @@
 		/*   
 		* List all customers from Sweden  
 		*/   </pre>
-<pre>	/************************************************ 
+<pre>	
+		 /************************************************ 
 		 * List the monthly orders for American customers 
 		 * for the year 2013. Order the list by month. 
 		 ************************************************/  </pre>
