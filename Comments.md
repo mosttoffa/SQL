@@ -22,3 +22,7 @@
 		 * for the year 2013. Order the list by month. 
 		 ************************************************/  </pre>
 
+
+<pre> ```sql /* * List all customers from Sweden */ SELECT * FROM Customers WHERE Country = 'Sweden'; ``` </pre>
+		 
+
