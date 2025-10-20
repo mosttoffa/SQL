@@ -23,6 +23,6 @@
 		 ************************************************/  </pre>
 
 
-<pre> ```sql /* * List all customers from Sweden */ SELECT * FROM Customers WHERE Country = 'Sweden'; ``` </pre>
+<pre> sql /* * List all customers from Sweden */ SELECT * FROM Customers WHERE Country = 'Sweden';  </pre>
 		 
 
