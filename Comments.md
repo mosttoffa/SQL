@@ -6,7 +6,7 @@
 
 <br> 
 	🔷 Single-line syntax: <br> 
-		``` // SQL description  ```
+		 // SQL description  <br> 
 	🔷 Multi-line syntax: <br>  
 	  ```  /* SQL description
        SQL description 
