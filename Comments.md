@@ -8,17 +8,17 @@
 	🔷 Single-line syntax: <br> 
 		<pre> // SQL description  </pre>
 	🔷 Multi-line syntax: <br>  
-<pre> /* SQL description
+<pre>    /* SQL description
 	       SQL description 
 	       SQL description 
-       SQL description */ </pre>
+           SQL description */ </pre>
 
-		/*  <br> 
+<pre>	/*  <br> 
 		* List all customers from Sweden  <br> 
-		*/ <br>  
+		*/ <br>  </pre>
 
-		/************************************************ <br> 
+<pre>	/************************************************ <br> 
 		 * List the monthly orders for American customers  <br> 
 		 * for the year 2013. Order the list by month. <br> 
-		 ************************************************/ <br>  
+		 ************************************************/  </pre>
 
