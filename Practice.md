@@ -1,4 +1,4 @@
-## SQL Practice Based on the Scenario
+##                         Practice Based on the Scenario
 
 ✅  Find 2nd Highest Salary of an Employee. <br> 
 💠 ROW_NUMBER() use করে বের করা যায়, অথবা DENSE_RANK() use করেও বের করা যায় <br> 
