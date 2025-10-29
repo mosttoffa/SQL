@@ -12,7 +12,10 @@
 💰 A → B তে টাকা ট্রান্সফার হচ্ছে. এর জন্য দুইটা query চলবে: <br> 
 1️⃣ A-এর account থেকে টাকা কমানো <br> 
 2️⃣ B-এর account-এ টাকা যোগ করা <br> 
-
+<pre>
+UPDATE Accounts SET Balance = Balance - 500 WHERE AccountNo = 'A';
+UPDATE Accounts SET Balance = Balance + 500 WHERE AccountNo = 'B';
+</pre>
 
 
 
