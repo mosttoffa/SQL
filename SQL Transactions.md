@@ -71,4 +71,35 @@ Transactional command শুধুমাত্র নিচের statement-এ�
 💳 ব্যাংকের ডেবিট/ক্রেডিট ট্রান্সফার <br> 
 🛒 ই-কমার্সের অর্ডার বা পেমেন্ট সেভ <br> 
 না হলে partial transaction হয়ে যেতে পারে, যার ফলে অসম্পূর্ণ অর্ডার বা অর্থনৈতিক ক্ষতি হতে পারে। <br> 
+🧩 আরও একটি Example: <br> 
+সমস্যা:
+একটি নতুন supplier এবং তার products গুলো একসাথে ডাটাবেজে যোগ করতে হবে। <br> 
+<pre>
+BEGIN TRAN;
+
+INSERT INTO [Supplier] (CompanyName, ContactName, City, Country, Phone)
+VALUES ('Amsterdam Broodjeshuis', 'Jan van de Berge',
+        'Amsterdam', 'Netherlands','(31) 1 2612 7769');
+
+DECLARE @SupplierId INT;
+SET @SupplierId = SCOPE_IDENTITY();
+
+INSERT INTO Product(SupplierId, ProductName, UnitPrice, Package)
+VALUES (@SupplierId, 'Krentebollen', 4.35, '6 in a bag');
+
+INSERT INTO Product(SupplierId, ProductName, UnitPrice, Package)
+VALUES (@SupplierId, 'Volkoren brood', 6.35, '1 loaf');
+
+INSERT INTO Product(SupplierId, ProductName, UnitPrice, Package)
+VALUES (@SupplierId, 'Roggebrood', 2.99, '20 slices per pkgs');
+
+COMMIT TRAN;
+
+</pre>
+
+
+
+
+
+
 
