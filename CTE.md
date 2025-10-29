@@ -23,5 +23,33 @@ CteName → CTE-এর নাম
 (column1, column2, ...) → SELECT statement-এর কলামগুলোর নাম
 SELECT statement → যে query-এর ফলাফলটা CTE হিসেবে save হবে
 </pre>
+🧮 Example 1: Basic CTE <br> 
+👉 সমস্যা: List annual sales with the best years first. (বছরে মোট বিক্রির পরিমাণ দেখাও (বছরভিত্তিক, বেশি থেকে কম সাজানো)). 
+<pre>
+ WITH Cte (Year, Count, Amount) AS (
+  SELECT YEAR(OrderDate) AS Year,
+         COUNT(Id) AS Count,
+         SUM(TotalAmount) AS Amount
+    FROM [Order]
+   GROUP BY YEAR(OrderDate)
+)
+SELECT Year, Amount 
+  FROM Cte
+ ORDER BY Amount DESC;
+🔍 এখানে কী হলো:
+প্রথমে WITH Cte এর ভেতরের SELECT চালানো হলো → বছরে বছরে sales summary
+তারপর বাইরের SELECT দিয়ে ঐ temporary Cte থেকে data নিলাম
+ORDER BY দিয়ে বেশি sales আগে দেখালাম
+</pre>
+
+
+
+
+
+
+
+
+
+
 
 
