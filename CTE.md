@@ -10,7 +10,18 @@ CTE তোমাকে এমন একটা query block তৈরি করত
 🔹 Nested Subquery-এর পরিবর্তে readable কাঠামো দেওয়া  <br>
 🔹 একই dataset একাধিকবার ব্যবহার করা যায়  <br>
 🔹 Recursive query (যেমন tree structure, hierarchy) বানানো যায়  <br>
-
-
+🧩 <b>CTE-এর Basic Syntax: </b> 
+<pre>
+WITH CteName (column1, column2, ..., columnN) AS (
+    SELECT statement
+)
+SELECT column1, column2
+FROM CteName
+WHERE ...
+🔸 ব্যাখ্যা:
+CteName → CTE-এর নাম
+(column1, column2, ...) → SELECT statement-এর কলামগুলোর নাম
+SELECT statement → যে query-এর ফলাফলটা CTE হিসেবে save হবে
+</pre>
 
 
