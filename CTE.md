@@ -75,7 +75,8 @@ SELECT FirstName, LastName, OrderCount, OrderAmount
   JOIN CteCustomer C ON O.CustomerId = C.Id
  ORDER BY LastName;
 </pre>
-
+🔍 <b>CTE কখন ব্যবহার করবে</b> <br> 
+জটিল subquery আছে, Query readable করতে, একই dataset একাধিকবার দরকার, বারবার subquery না লিখে reuse করতে, Recursive data দরকার (যেমন parent-child), Hierarchical query তৈরি করতে, Aggregation বা summary table দরকার, Clean, modular report তৈরি করতে. 
 
 
 
