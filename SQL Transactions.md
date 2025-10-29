@@ -67,7 +67,7 @@ SAVE TRAN	     |       Transaction-এর মধ্যে এক বা এক�
 
 ⚠️ <b>নোট: </b> <br>
 Transactional command শুধুমাত্র নিচের statement-এর সাথে কাজ করে: <br> 
-👉 INSERT, UPDATE, DELETE এগুলো DDL (যেমন CREATE TABLE, DROP TABLE) এর সাথে কাজ করে না। <br> 
+👉 INSERT, UPDATE, DELETE এগুলো DDL (যেমন CREATE TABLE, DROP TABLE) এর সাথে কাজ করে না। <br>  <br>
 
 
 🔁 <b>Autocommit Mode কী? </b> <br> 
