@@ -27,6 +27,54 @@ Transaction সাধারণত তিনটি ধাপে চলে 👇 <b
 <b>COMMIT TRANSACTION → সব কিছু সফল হলে save করা </b> <br> 
 <b>ROLLBACK TRANSACTION → কোনো সমস্যা হলে সব কিছু বাতিল করা </b>   <br> 
 
+🧾 <b>Example (Bank Transfer): </b> 
+<pre>
+BEGIN TRANSACTION;
+
+UPDATE Accounts 
+SET Balance = Balance - 500 
+WHERE AccountNo = 'A';
+
+UPDATE Accounts 
+SET Balance = Balance + 500 
+WHERE AccountNo = 'B';
+
+-- সবকিছু ঠিকভাবে হলে save করো
+COMMIT TRANSACTION;
+
+-- কোনো error হলে
+ROLLBACK TRANSACTION;
+
+✅ যদি দুইটা query ঠিকভাবে execute হয় → COMMIT TRANSACTION
+❌ যদি কোনো একটা fail করে → ROLLBACK TRANSACTION
+</pre>
+
+🔐 <b>Transaction এর ৪টি গুণ (ACID Properties): </b> <br> 
+<pre>
+Property	     |           ব্যাখ্যা
+--------------------------------------------------------------------------
+A - Atomicity	 |       পুরো transaction একক ইউনিট – সব হবে বা কিছুই হবে না
+C - Consistency	 |       Transaction শেষে ডেটা valid অবস্থায় থাকতে হবে
+I - Isolation	 |       একাধিক transaction একসাথে চললেও একে অপরকে প্রভাবিত করবে না
+D - Durability	 |       Commit হয়ে গেলে server crash হলেও ডেটা থাকবে
+</pre> 
+🧩 <b>Practical Example (with Error Handling): </b> <br> 
+<pre>
+BEGIN TRY
+    BEGIN TRANSACTION;
+
+    UPDATE Orders SET Status = 'Shipped' WHERE OrderId = 1001;
+    UPDATE Inventory SET Stock = Stock - 1 WHERE ProductId = 501;
+
+    COMMIT TRANSACTION; -- সবকিছু ঠিক আছে ✅
+END TRY
+BEGIN CATCH
+    ROLLBACK TRANSACTION; -- কোনো error হলে সব বাতিল ❌
+    PRINT 'Error occurred, transaction rolled back';
+END CATCH;
+
+</pre>
+
 <br>
 🎯 উদাহরণ: <br> 
 👉 সমস্যা: একটি নতুন order তৈরি করতে হবে — এবং নিশ্চিত করতে হবে যেন Order এবং তার OrderItems দুটোই সেভ হয় বা কিছুই না হয়। <br> 
@@ -107,8 +155,15 @@ COMMIT TRAN;
 Result: ৪টি রেকর্ড insert হয়েছে ✅
 </pre>
 
-
-
+⚙️ <b>Where Transactions are used (Common Use Cases): </b> <br> 
+<pre>
+Use Case	              |          Description
+-----------------------------------------------------------------------------
+💳 Bank Transfer	            টাকা ট্রান্সফার — দুই দিকেই balance update
+🛒 E-Commerce Checkout	        Order তৈরি, Payment deduct, Stock update
+🏦 Payroll Processing	        একাধিক table update (Employee, Salary, Log)
+📦 Inventory Update	            Stock increase/decrease operations
+</pre>
 
 
 
