@@ -1,9 +1,9 @@
 ## TRUNCATE 
 ✅ TRUNCATE <br> 
 
-  * TRUNCATE command deletes all records from a table. 
-  * TRUNCATE is similar to DELETE but executes much faster and more efficient.
-  * TRUNCATE cannot be used when a foreign key constraint prevents deletion. <br> 
+ * TRUNCATE command deletes all records from a table.
+ * TRUNCATE is similar to DELETE but executes much faster and more efficient.
+ * TRUNCATE cannot be used when a foreign key constraint prevents deletion. <br> 
 🔷 Syntax : 
 	<pre>	TRUNCATE TABLE table-name </pre> 
 👉 Example: Delete all Supplier records.
