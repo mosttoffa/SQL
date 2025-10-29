@@ -94,7 +94,10 @@ INSERT INTO Product(SupplierId, ProductName, UnitPrice, Package)
 VALUES (@SupplierId, 'Roggebrood', 2.99, '20 slices per pkgs');
 
 COMMIT TRAN;
-
+    
+👉 এখানে সবগুলো INSERT সফল হলে তবেই ডেটা সেভ হবে,
+না হলে একটিও হবে না।
+Result: ৪টি রেকর্ড insert হয়েছে ✅
 </pre>
 
 
