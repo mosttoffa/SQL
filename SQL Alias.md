@@ -1,0 +1,23 @@
+## SQL Alias
+✅ SQL Alias
+
+ * Alias (Alias is a shorthand for a table or column name.
+ * Aliases reduce the amount of typing required to enter a query.
+ * Complex queries with aliases are generally easier to read.
+ * Aliases are useful with JOINs and aggregates: SUM, COUNT, etc.)
+🔷 SELECT with Column and Table Aliases <br> 
+👉 Example: List the number of customers in each country.Display results with easy-to-understand column headers. 
+<pre>
+    SELECT C.Country, COUNT(C.Id) Customers 
+		FROM Customer C
+		GROUP BY C.Country
+ </pre>
+🔷 SELECT with ORDER BY, GROUP BY, Aliases <br>
+👉 Example: List the total amount spent by customer with easy to read column headers.	
+<pre>	
+    SELECT C.Id , C.LastName + ', ' + C.FirstName AS Customer, SUM(O.TotalAmount) 'Total Spent'
+		FROM [Order] O 
+		INNER JOIN Customer C ON O.CustomerId = C.Id
+		GROUP BY C.Id, C.LastName + ', ' + C.FirstName
+		ORDER BY SUM(O.TotalAmount) DESC
+</pre>
