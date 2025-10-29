@@ -41,10 +41,40 @@ SELECT Year, Amount
 তারপর বাইরের SELECT দিয়ে ঐ temporary Cte থেকে data নিলাম
 ORDER BY দিয়ে বেশি sales আগে দেখালাম
 </pre>
-
-
-
-
+🧩 Example 2: Monthly Min–Max Order Value <br> 
+👉 সমস্যা: List the smallest and largest orders by month in 2013.  (২০১৩ সালের প্রতিমাসে সবচেয়ে ছোট ও বড় order বের করো)
+<pre>
+WITH Cte (Month, Min, Max) AS (
+  SELECT MONTH(OrderDate) AS Month,
+         MIN(TotalAmount) AS Min,
+         MAX(TotalAmount) AS Max
+    FROM [Order]
+   WHERE YEAR(OrderDate) = 2013
+   GROUP BY MONTH(OrderDate)
+)
+SELECT Month, Min AS MinOrder, Max AS MaxOrder
+  FROM Cte
+ ORDER BY Month; 
+</pre>
+🧩 Example 3: Multiple CTE (একাধিক CTE) <br> 
+👉 সমস্যা:  List customers in the US and their order counts and order amounts for 2013.  (USA দেশের customer দের ২০১৩ সালের order count ও amount বের করো) 
+<pre>
+WITH CteOrder (CustomerId, OrderCount, OrderAmount) AS (
+  SELECT CustomerId, COUNT(Id), SUM(TotalAmount)
+    FROM [Order]
+   WHERE YEAR(OrderDate) = 2013
+   GROUP BY CustomerId
+),
+CteCustomer (Id, FirstName, LastName) AS (
+  SELECT Id, FirstName, LastName
+    FROM Customer
+   WHERE Country = 'USA'
+)
+SELECT FirstName, LastName, OrderCount, OrderAmount
+  FROM CteOrder O
+  JOIN CteCustomer C ON O.CustomerId = C.Id
+ ORDER BY LastName;
+</pre>
 
 
 
