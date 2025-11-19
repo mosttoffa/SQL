@@ -1,6 +1,7 @@
 ## SQL Query 
 
 ## Create Table : 
+```
 Model/Entity name: MercCompanyWiseMercSettingEntity 
 -----------------
 Table: 
@@ -19,14 +20,16 @@ CREATE TABLE MERC_CompanyWiseMercSetting (
 
 ALTER TABLE MERC_CompanyWiseMercSetting
 ADD SourceKey NVARCHAR(50);
-
+```
+```
 -----------------------------------------------------
 -- Truncate korle sob data delete hoye jabe and ID sob first theke hobe 
   Truncate Table MERC_CompanyWiseMercSetting
 -----------------------------------------------------
+```
 
 ## Update Query 
-
+```
 --	Update MERC_Query_FabricColourInfo set GmtColorId=NULL where Id in ('B7F63E15-C376-43BF-863E-9FDF0E3E350B','91B00084-D37D-469A-84BE-4E7EF59F8A85')
 
 --------
@@ -39,10 +42,11 @@ select * from MERC_BuyerInformation where ID='C93FAD59-BF89-45DA-997F-BD888DF631
 select OrderNo from MERC_OrderBookingMaster where JobNo='312' and AreaId='617AC53E-C377-4CFF-A2DB-E55E561CA6BA' and BuyerId='C93FAD59-BF89-45DA-997F-BD888DF63136'
 
 --update MERC_OrderBookingMaster set OrderNo='KKCL/312/2025//RMFAR Inc.'where JobNo='312' and AreaId='617AC53E-C377-4CFF-A2DB-E55E561CA6BA' and BuyerId='C93FAD59-BF89-45DA-997F-BD888DF63136'
-
+```
 ------------------------------------------------------------
 
 ## A full Join Query of a Part
+```
 select A.FabricSerial,
 
 A.Id, A.fabricColourInfoID, A.BPinfoID, A.ColourNameID, A.Remarks, A.CreatedBy, A.CreatedDate, A.UpdateBy, A.UpdateDate, A.fabficTypeId, A.fabficConstructionTypeID, A.CompositionID, A.gsmID, A.StyleOptionId, A.DyingInformation, A.DyingInformationText, 
@@ -104,12 +108,10 @@ and BD.ID=A.BPinfoID  and S.QueryId ='ACF30D55-CF1B-481E-99B4-9C722102C593' orde
 
 --	Update MERC_Query_FabricColourInfo set GmtColorId=NULL where Id in ('B7F63E15-C376-43BF-863E-9FDF0E3E350B','91B00084-D37D-469A-84BE-4E7EF59F8A85')
 
-
 --------
 --select * from MERC_Query_FabricColourInfo
 --select * from HR_Region 
 --select * from MERC_OrderBookingMaster where JobNo='312' and AreaId='617AC53E-C377-4CFF-A2DB-E55E561CA6BA'
-
 
 select * from MERC_BuyerInformation where ID='C93FAD59-BF89-45DA-997F-BD888DF63136'
 
@@ -266,7 +268,7 @@ Join kno lagteche eikhane?
 Kivabe bujhbo kon table kar sathe JOIN hobe?
 
 
-
+```
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
