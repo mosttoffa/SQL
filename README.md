@@ -48,7 +48,7 @@ Key parts: <br>
   return Json(new { Tabdata = TableData }, JsonRequestBehavior.AllowGet);
 ```
 ✅ Quick Comparison Table 
-
+```
     | Term              | সহজ ব্যাখ্যা                                    |
     | ----------------- | ----------------------------------------------- |
     | `ADO.NET`         | Database থেকে data fetch করার core tech         |
@@ -58,6 +58,7 @@ Key parts: <br>
     | `DbCommand`       | SQL query/command ধরে রাখে                      |
     | `DatabaseFactory` | Config থেকে DB connection পড়ে DB object বানায় |
     | `TableData`       | সাধারণত variable / developer naming             |
+```
 Mental Model : <br> 
   DbCommand বলে কি আনবো - (query)  <br> 
   DatabaseFactory বলে কোথা থেকে আনবো - (connection from config) <br> 
