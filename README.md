@@ -47,7 +47,23 @@ Key parts: <br>
   // ... সবশেষে JSON-এ পাঠানো হয় ...
   return Json(new { Tabdata = TableData }, JsonRequestBehavior.AllowGet);
 ```
+✅ Quick Comparison Table 
 
+    | Term              | সহজ ব্যাখ্যা                                    |
+    | ----------------- | ----------------------------------------------- |
+    | `ADO.NET`         | Database থেকে data fetch করার core tech         |
+    | `DataTable`       | RAM-এ থাকা 1 table                              |
+    | `DataSet`         | RAM-এ থাকা multiple table holder                |
+    | `DataRow`         | DataTable এর 1 row/record                       |
+    | `DbCommand`       | SQL query/command ধরে রাখে                      |
+    | `DatabaseFactory` | Config থেকে DB connection পড়ে DB object বানায় |
+    | `TableData`       | সাধারণত variable / developer naming             |
+Mental Model : <br> 
+  DbCommand বলে কি আনবো - (query)  <br> 
+  DatabaseFactory বলে কোথা থেকে আনবো - (connection from config) <br> 
+  Result আসে DataSet  <br> 
+  DataSet এর ভিতর table আকারে থাকে DataTable  <br> 
+  সেই table এর 1 record = DataRow <br> 
 
 
 
