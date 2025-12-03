@@ -49,14 +49,14 @@ Key parts: <br>
 ```
 ✅ Quick Comparison Table 
 ```
-    | Term              | সহজ ব্যাখ্যা                                    |
+    | Term              | সহজ ব্যাখ্যা                                      |
     | ----------------- | ----------------------------------------------- |
     | `ADO.NET`         | Database থেকে data fetch করার core tech         |
     | `DataTable`       | RAM-এ থাকা 1 table                              |
     | `DataSet`         | RAM-এ থাকা multiple table holder                |
     | `DataRow`         | DataTable এর 1 row/record                       |
-    | `DbCommand`       | SQL query/command ধরে রাখে                      |
-    | `DatabaseFactory` | Config থেকে DB connection পড়ে DB object বানায় |
+    | `DbCommand`       | SQL query/command ধরে রাখে                       |
+    | `DatabaseFactory` | Config থেকে DB connection পড়ে DB object বানায়   |
     | `TableData`       | সাধারণত variable / developer naming             |
 ```
 Mental Model : <br> 
